@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Portfolio de Moussa Mbathie, étudiant en Mathématiques Appliquées et Informatique à l'UNCHK, passionné par le développement logiciel et la cybersécurité.">
+
+    <title>Moussa Mbathie | Portfolio</title>
+
+    <style>
+
+        /* =========================
+           1. VARIABLES CSS
+        ========================= */
+
+        :root {
+            --background: #080d18;
+            --section-bg: #101a2c;
+            --card-bg: #162238;
+
+            --primary: #2563eb;
+            --secondary: #38bdf8;
+
+            --text: #f1f5f9;
+            --text-muted: #94a3b8;
+
+            --border: #263750;
+        }
+
+
+        /* =========================
+           2. STYLE GENERAL
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--text);
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .section-title {
+            font-size: 30px;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+
+        .section-description {
+            color: var(--text-muted);
+            margin-bottom: 35px;
+        }
+
+
+        /* =========================
+           3. NAVIGATION
+        ========================= */
+
+        nav {
+            background-color: rgba(8, 13, 24, 0.95);
+            border-bottom: 1px solid var(--border);
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 18px 0;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: bold;
+            color: var(--secondary);
+        }
+
+        .logo span {
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+
+        /* =========================
+           4. ACCUEIL
+        ========================= */
+
+        .hero {
+            min-height: 550px;
+
+            display: flex;
+            align-items: center;
+
+            padding: 80px 0;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-subtitle {
+            color: var(--secondary);
+            font-weight: bold;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--secondary);
+        }
+
+        .hero-description {
+            color: var(--text-muted);
+            font-size: 17px;
+            max-width: 700px;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+
+            border-radius: 7px;
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--secondary);
+            color: var(--secondary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--secondary);
+            color: var(--background);
+        }
+
+
+        /* =========================
+           5. SECTIONS GENERALES
+        ========================= */
+
+        section.content-section {
+            padding: 75px 0;
+            border-top: 1px solid var(--border);
+        }
+
+
+        /* =========================
+           6. A PROPOS
+        ========================= */
+
+        .about-content {
+            background-color: var(--section-bg);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .about-content p {
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        .about-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .info-item {
+            background-color: var(--card-bg);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .info-item strong {
+            color: var(--secondary);
+            display: block;
+        }
+
+
+        /* =========================
+           7. COMPETENCES
+        ========================= */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-card {
+            background-color: var(--section-bg);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary);
+        }
+
+        .skill-card h3 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .skill-card ul {
+            list-style: none;
+        }
+
+        .skill-card li {
+            color: var(--text-muted);
+            margin-bottom: 9px;
+        }
+
+        .skill-card li::before {
+            content: "▹ ";
+            color: var(--secondary);
+        }
+
+
+        /* =========================
+           8. CERTIFICATIONS
+        ========================= */
+
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .cert-card {
+            background-color: var(--section-bg);
+            padding: 25px;
+
+            border-left: 4px solid var(--secondary);
+            border-radius: 8px;
+        }
+
+        .cert-card h3 {
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .cert-card p {
+            color: var(--text-muted);
+        }
+
+        .badge {
+            display: inline-block;
+            margin-top: 12px;
+
+            background-color: rgba(56, 189, 248, 0.12);
+            color: var(--secondary);
+
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+
+
+        /* =========================
+           9. FORMATIONS
+        ========================= */
+
+        .formation-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .formation-card {
+            background-color: var(--section-bg);
+            padding: 20px;
+
+            border: 1px solid var(--border);
+            border-radius: 10px;
+
+            transition: 0.3s;
+        }
+
+        .formation-card:hover {
+            border-color: var(--secondary);
+            transform: translateY(-4px);
+        }
+
+        .formation-card h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .formation-card p {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .formation-category {
+            color: var(--secondary);
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+
+        /* =========================
+           10. PLATEFORMES
+        ========================= */
+
+        .platforms {
+            text-align: center;
+        }
+
+        .platforms-description {
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 35px;
+        }
+
+        .logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .logo-card {
+            width: 125px;
+            padding: 20px 10px;
+
+            background-color: var(--section-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+
+            transition: 0.3s;
+        }
+
+        .logo-card:hover {
+            transform: translateY(-7px);
+            border-color: var(--secondary);
+        }
+
+        .logo-card img {
+            width: 45px;
+            height: 45px;
+            object-fit: contain;
+        }
+
+        .logo-card p {
+            margin-top: 10px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           11. CONTACT
+        ========================= */
+
+        .contact-box {
+            background-color: var(--section-bg);
+            border: 1px solid var(--border);
+
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .contact-box p {
+            color: var(--text-muted);
+            margin-bottom: 25px;
+        }
+
+
+        /* =========================
+           12. FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+            padding: 25px;
+
+            background-color: #050914;
+            border-top: 1px solid var(--border);
+
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           13. RESPONSIVE DESIGN
+        ========================= */
+
+        @media screen and (max-width: 850px) {
+
+            .nav-links {
+                gap: 12px;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media screen and (max-width: 600px) {
+
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 70px 0;
+            }
+
+            .hero h1 {
+                font-size: 35px;
+            }
+
+            .hero-description {
+                font-size: 15px;
+            }
+
+            .skills-grid,
+            .certifications-grid,
+            .formation-grid,
+            .about-info {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 25px;
+            }
+
+            .contact-box {
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+
+
+<body>
+
+    <!--Navigation Bar-->
+    <nav>
+        <div class="container navbar">
+
+            <a href="#accueil" class="logo">
+                M<span>B.</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#apropos">À propos</a></li>
+                <li><a href="#competences">Compétences</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#formations">Formations</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+    <!--ACCUEIL-->
+
+    <header class="hero" id="accueil">
+
+        <div class="container hero-content">
+        
+            <p class="hero-subtitle">
+                BIENVENUE SUR MON PORTFOLIO
+            </p>
+        
+            <h1>
+                Bonjour, je suis <span>Moussa MBATHIE</span>
+            </h1>
+
+            <p class="hero-description">
+                Étudiant en Licence 2 Mathématiques Appliquées et
+                Informatique à l'Université Numérique Cheikh Hamidou Kane
+                (UNCHK), spécialisé en ingénierie logicielle.
+                Passionné par le développement web et mobile,
+                les nouvelles technologies et la cybersécurité,
+                je développe continuellement mes compétences
+                à travers des formations et des projets personnels.
+            </p>
+
+            <div class="hero-buttons">
+        
+                <a href="#apropos" class="btn btn-primary">
+                    Découvrir mon profil
+                </a>
+        
+                <a href="#contact" class="btn btn-outline">
+                    Me contacter
+                </a>
+        
+            </div>
+        
+        </div>
+    
+    </header>
+
+    <main>
+
+        <!--A PROPOS--> 
+
+        <section class="content-section" id="apropos">
+
+            <div class="container">
+            
+                <h2 class="section-title">
+                    À propos de moi
+                </h2>
+            
+                <p class="section-description">
+                    Découvrez mon parcours et mes ambitions.
+                </p>
+
+                <div class="about-content">
+            
+                    <p>
+                        Je suis étudiant en Licence 2 de Mathématiques
+                        Appliquées et Informatique à l'Université
+                        Numérique Cheikh Hamidou Kane (UNCHK),
+                        avec une orientation en ingénierie logicielle.
+                    </p>
+
+                    <p>
+                        Je m'intéresse particulièrement au développement
+                        logiciel, au développement web et mobile,
+                        à l'administration des systèmes et réseaux
+                        ainsi qu'à la cybersécurité.
+                    </p>
+
+                    <p>
+                        Je suis convaincu que l'apprentissage continu,
+                        la pratique et la réalisation de projets
+                        constituent des éléments essentiels
+                        pour progresser dans le domaine informatique.
+                    </p>
+
+
+                    <div class="about-info">
+
+                        <div class="info-item">
+                            <strong>Formation</strong>
+                            Licence 2 MAI
+                        </div>
+
+                        <div class="info-item">
+                            <strong>Université</strong>
+                            UNCHK
+                        </div>
+
+                        <div class="info-item">
+                            <strong>Spécialisation</strong>
+                            Ingénierie logicielle
+                        </div>
+
+                        <div class="info-item">
+                            <strong>Centres d'intérêt</strong>
+                            Développement & Cybersécurité
+                        </div>
+
+                    </div>
+            
+                </div>
+            
+            </div>
+        
+        </section>
+
+    <!--COMPETENCES-->
+        <section class="content-section" id="competences">
+
+            <div class="container">
+                
+                <h2 class="section-title">
+                    Mes compétences
+                </h2>
+                
+                <p class="section-description">
+                    Les domaines dans lesquels je développe
+                    progressivement mes connaissances.
+                </p>
+
+                <div class="skills-grid">
+                
+                    <div class="skill-card">
+                
+                        <h3>Développement web</h3>
+                
+                        <ul>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                        </ul>
+                
+                    </div>
+
+                    <div class="skill-card">
+                
+                        <h3>Programmation</h3>
+                
+                        <ul>
+                            <li>Python (notions)</li>
+                            <li>Java (notions)</li>
+                        </ul>
+                
+                    </div>
+
+                    <div class="skill-card">
+                
+                        <h3>Cybersécurité</h3>
+                
+                        <ul>
+                            <li>Hacking éthique (notions)</li>
+                            <li>Sécurité des applications</li>
+                            <li>Tests d'intrusion (notions)</li>
+                            <li>Veille et sensibilisation</li>
+                        </ul>
+                
+                    </div>
+
+                    <div class="skill-card">
+
+                        <h3>Systèmes et réseaux</h3>
+
+                        <ul>
+                            <li>Maintenance informatique</li>
+                            <li>Réseaux informatiques de base</li>
+                            <li>Installation et configuration des SE</li>
+                            <li>Installation de logiciels</li>
+                        </ul>
+
+                    </div>
+
+                    <div class="skill-card">
+
+                        <h3>Bases de données</h3>
+
+                        <ul>
+                            <li>SQL (notions)</li>
+                            <li>NoSQL (notions)</li>
+                        </ul>
+
+                    </div>
+
+                    <div class="skill-card">
+
+                        <h3>Bureautique</h3>
+
+                        <ul>
+                            <li>Microsoft Word</li>
+                            <li>Microsoft Excel</li>
+                            <li>Microsoft PowerPoint</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!--CERTIFICATIONS-->
+
+        <section class="content-section" id="certifications">
+
+            <div class="container">
+
+                <h2 class="section-title">
+                    Mes certifications
+                </h2>
+
+                <p class="section-description">
+
+                    Les certifications professionnelles obtenues
+                    dans le domaine de la cybersécurité.
+
+                </p>
+
+                <div class="certifications-grid">
+
+                    <div class="cert-card">
+
+                        <h3>
+                            Analyste Junior en Cybersécurité
+                        </h3>
+
+                        <p>
+                            Force-N
+                        </p>
+
+                        <span class="badge">
+                            Certification obtenue - 2025
+                        </span>
+
+                    </div>
+
+                    <div class="cert-card">
+
+                        <h3>
+                            Analyste en Cybersécurité
+                        </h3>
+
+                        <p>
+                            Force-N
+                        </p>
+
+                        <span class="badge">
+                            Certification obtenue - 2026
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!--FORMATIONS EN COURS-->
+
+        <section class="content-section" id="formations">
+
+            <div class="container">
+
+                <h2 class="section-title">
+                    Formations en cours
+                </h2>
+
+                <p class="section-description">
+                    Je continue à renforcer mes compétences
+                    à travers des parcours de formation
+                    proposés par différentes organisations.
+                </p>
+
+                <div class="formation-grid">
+
+                    <div class="formation-card">
+
+                        <p class="formation-category">
+                            Cybersécurité
+                        </p>
+
+                        <h3>
+                            Google Cybersecurity
+                        </h3>
+
+                        <p>
+                            Coursera - Formation proposée par l'UNCHK
+                        </p>
+
+                    </div>
+
+                    <div class="formation-card">
+
+                        <p class="formation-category">
+                            Cybersécurité
+                        </p>
+
+                        <h3>
+                            IBM Cybersecurity
+                        </h3>
+
+                        <p>
+                            Coursera - Formation proposée par l'UNCHK
+                        </p>
+
+                    </div>
+
+                    <div class="formation-card">
+
+                        <p class="formation-category">
+                            Cybersécurité
+                        </p>
+
+                        <h3>
+                            Cisco Cybersecurity
+                        </h3>
+
+                        <p>
+                            Formation suivie en autodidacte
+                        </p>
+
+                    </div>
+
+                    <div class="formation-card">
+
+                        <p class="formation-category">
+                            Support informatique
+                        </p>
+
+                        <h3>
+                            Google IT Support
+                        </h3>
+
+                        <p>
+                            Coursera - Formation proposée par l'UNCHK
+                        </p>
+
+                    </div>
+
+                    <div class="formation-card">
+
+                        <p class="formation-category">
+                            Support informatique
+                        </p>
+
+                        <h3>
+                            IBM IT Support
+                        </h3>
+
+                        <p>
+                            Coursera - Formation proposée par l'UNCHK
+                        </p>
+
+                    </div>
+
+                    <div class="formation-card">
+
+                        <p class="formation-category">
+                            Développement Front-End
+                        </p>
+
+                        <h3>
+                            IBM Front-End Development
+                        </h3>
+
+                        <p>
+                            Coursera - Formation proposée par l'UNCHK
+                        </p>
+
+                    </div>
+
+                    <div class="formation-card">
+
+                        <p class="formation-category">
+                            Développement Full Stack
+                        </p>
+
+                        <h3>
+                            IBM Full Stack Software Developer
+                        </h3>
+
+                        <p>
+                            Coursera - Formation proposée par l'UNCHK
+                        </p>
+
+                    </div>
+
+                    <div class="formation-card">
+
+                        <p class="formation-category">
+                            DevOps
+                        </p>
+
+                        <h3>
+                            IBM DevOps and Software Engineering
+                        </h3>
+
+                        <p>
+                            Coursera - Formation proposée par l'UNCHK
+                        </p>
+
+                    </div>
+
+                    <div class="formation-card">
+
+                        <p class="formation-category">
+                            Développement logiciel
+                        </p>
+
+                        <h3>
+                            Amazon Junior Software Developer
+                        </h3>
+
+                        <p>
+                            Coursera - Formation proposée par l'UNCHK
+                        </p>
+
+                    </div>
+
+                    <div class="formation-card">
+
+                        <p class="formation-category">
+                            Développement Full Stack
+                        </p>
+
+                        <h3>
+                            Amazon Web Development
+                        </h3>
+
+                        <p>
+                            Coursera - Formation proposée par l'UNCHK
+                        </p>
+
+                    </div>
+
+                    <div class="formation-card">
+
+                        <p class="formation-category">
+                            Développement Back-End
+                        </p>
+
+                        <h3>
+                            Meta Back-End Developer
+                        </h3>
+
+                        <p>
+                            Coursera - Formation proposée par l'UNCHK
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!--PLATEFORMES-->
+
+        <section class="content-section platforms">
+
+            <div class="container">
+
+                <h2 class="section-title">
+                    Plateformes de formation
+                </h2>
+
+                <p class="platforms-description">
+                    Je développe continuellement mes compétences
+                    grâce aux formations et ressources proposées
+                    par ces différentes organisations.
+                </p>
+
+                <div class="logos">
+
+                    <div class="logo-card">
+
+                        <img
+                            src="https://cdn.simpleicons.org/coursera"
+                            alt="Logo Coursera">
+
+                        <p>Coursera</p>
+
+                    </div>
+
+                    <div class="logo-card">
+
+                        <img
+                            src="https://cdn.simpleicons.org/google"
+                            alt="Logo Google">
+
+                        <p>Google</p>
+
+                    </div>
+
+                    <div class="logo-card">
+
+                        <svg viewBox="0 0 100 50" width="50" height="50"
+                            xmlns="http://www.w3.org/2000/svg">
+
+                            <text x="50" y="35"
+                                text-anchor="middle"
+                                font-family="Arial"
+                                font-weight="bold"
+                                font-size="32"
+                                fill="#ffffff">
+                                IBM
+                            </text>
+
+                        </svg>
+
+                        <p>IBM</p>
+
+                    </div>
+
+                    <div class="logo-card">
+
+                        <img
+                            src="https://cdn.simpleicons.org/cisco"
+                            alt="Logo Cisco">
+
+                        <p>Cisco</p>
+
+                    </div>
+
+                    <div class="logo-card">
+
+                        <svg viewBox="0 0 100 60" width="50" height="50"
+                            xmlns="http://www.w3.org/2000/svg">
+
+                            <text x="50" y="30"
+                                text-anchor="middle"
+                                font-family="Arial"
+                                font-weight="bold"
+                                font-size="23"
+                                fill="#ffffff">
+                                amazon
+                            </text>
+
+                            <path d="M20 38 Q50 58 82 38"
+                                stroke="#FF9900"
+                                stroke-width="4"
+                                fill="none"
+                                stroke-linecap="round"/>
+
+                        </svg>
+
+                        <p>Amazon</p>
+
+                    </div>
+
+                    <div class="logo-card">
+
+                        <img
+                            src="https://cdn.simpleicons.org/meta"
+                            alt="Logo Meta">
+
+                        <p>Meta</p>
+
+                    </div>
+
+                    <div class="logo-card">
+
+                        <svg viewBox="0 0 50 50" width="50" height="50"
+                            xmlns="http://www.w3.org/2000/svg">
+
+                            <rect x="2" y="2" width="21" height="21" fill="#F25022"/>
+                            <rect x="27" y="2" width="21" height="21" fill="#7FBA00"/>
+                            <rect x="2" y="27" width="21" height="21" fill="#00A4EF"/>
+                            <rect x="27" y="27" width="21" height="21" fill="#FFB900"/>
+
+                        </svg>
+
+                        <p>Microsoft</p>
+
+                    </div>
+
+                    <div class="logo-card">
+
+                        <div style="font-size: 35px;">
+                            🎓
+                        </div>
+
+                        <p>UNCHK</p>
+
+                    </div>
+
+                    <div class="logo-card">
+
+                        <div style="font-size: 35px;">
+                            🏅
+                        </div>
+
+                        <p>Force-N</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!--CONTACT-->
+
+        <section class="content-section" id="contact">
+
+            <div class="container">
+
+                <div class="contact-box">
+
+                    <h2 class="section-title">
+                        Travaillons ensemble !
+                    </h2>
+
+                    <p>
+                        Vous souhaitez échanger avec moi,
+                        discuter d'un projet ou d'une opportunité
+                        professionnelle ?
+                        N'hésitez pas à me contacter.
+                    </p>
+
+                    <a href="mailto:mbathie914@gmail.com"
+                       class="btn btn-primary">
+                        Envoyer un e-mail
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER-->
+
+    <footer>
+
+        <p>
+            © 2026 Moussa MBATHIE.
+            Tous droits réservés.
+        </p>
+
+        <p>
+            Conçu avec HTML & CSS.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
